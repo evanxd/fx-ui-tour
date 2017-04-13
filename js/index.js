@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 (function() {
   var addons = document.querySelector("#add-ons");
@@ -10,19 +10,21 @@
 
   addons.addEventListener("click", function() {
     hideHighlight();
-    document.dispatchEvent(new CustomEvent('mozUITour',
-      {bubbles:true, detail: {action:'showHighlight', data: { target: 'addons', effect: 'wobble' }}}));
+    document.dispatchEvent(new CustomEvent("mozUITour",
+      {bubbles:true, detail: {action: "showHighlight", data: { target: "addons", effect: "wobble" }}}));
   });
 
   customizeFirefox.addEventListener("click", function() {
     hideHighlight();
     document.dispatchEvent(new CustomEvent("mozUITour",
-      {bubbles: true, detail: {action:'showHighlight', data: { target: 'customize', effect: 'wobble' }}}));
+      {bubbles: true, detail: {action: "showHighlight", data: { target: "customize", effect: "wobble" }}}));
   });
 
   defaultBrowser.addEventListener("click", function() {
     // TODO: Add a new action to open default browser setting panel in the UITour library.
     hideHighlight();
+    document.dispatchEvent(new CustomEvent("mozUITour",
+      {bubbles: true, detail: {action: "setConfiguration", data: { configuration: "defaultBrowser" }}}));
   });
 
   firefoxSync.addEventListener("click", function() {
@@ -40,7 +42,7 @@
   privateBrowsing.addEventListener("click", function() {
     hideHighlight();
     document.dispatchEvent(new CustomEvent("mozUITour",
-      {bubbles: true, detail: {action:'showHighlight', data: { target: 'privateWindow', effect: 'wobble' }}}));
+      {bubbles: true, detail: {action: "showHighlight", data: { target: "privateWindow", effect: "wobble" }}}));
   });
 
   function hideHighlight() {
