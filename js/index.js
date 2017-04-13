@@ -9,31 +9,42 @@
   var privateBrowsing = document.querySelector("#private-browsing");
 
   addons.addEventListener("click", function() {
+    hideHighlight();
     document.dispatchEvent(new CustomEvent('mozUITour',
       {bubbles:true, detail: {action:'showHighlight', data: { target: 'addons', effect: 'wobble' }}}));
   });
 
   customizeFirefox.addEventListener("click", function() {
+    hideHighlight();
     document.dispatchEvent(new CustomEvent("mozUITour",
       {bubbles: true, detail: {action:'showHighlight', data: { target: 'customize', effect: 'wobble' }}}));
   });
 
   defaultBrowser.addEventListener("click", function() {
     // TODO: Add a new action to open default browser setting panel in the UITour library.
+    hideHighlight();
   });
 
   firefoxSync.addEventListener("click", function() {
+    hideHighlight();
     document.dispatchEvent(new CustomEvent("mozUITour",
       {bubbles: true, detail: {action: "showFirefoxAccounts", data:{}}}));
   });
 
   oneOffSearch.addEventListener("click", function() {
+    hideHighlight();
     document.dispatchEvent(new CustomEvent("mozUITour",
       {bubbles: true, detail: {action: "openSearchPanel", data:{}}}));
   });
 
   privateBrowsing.addEventListener("click", function() {
+    hideHighlight();
     document.dispatchEvent(new CustomEvent("mozUITour",
       {bubbles: true, detail: {action:'showHighlight', data: { target: 'privateWindow', effect: 'wobble' }}}));
   });
+
+  function hideHighlight() {
+    document.dispatchEvent(new CustomEvent("mozUITour",
+      {bubbles: true, detail: {action: "hideHighlight", data:{}}}));
+  }
 }());
