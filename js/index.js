@@ -12,7 +12,7 @@
 
   firefoxSync.addEventListener("click", function() {
     document.dispatchEvent(new CustomEvent("mozUITour",
-      {bubbles: true, detail: {action: "showFirefoxAccounts", data:{name: "appMenu"}}}));
+      {bubbles: true, detail: {action: "showFirefoxAccounts", data:{}}}));
   });
 
   oneOffSearch.addEventListener("click", function() {
