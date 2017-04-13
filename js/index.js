@@ -9,13 +9,13 @@
   var privateBrowsing = document.querySelector("#private-browsing");
 
   addons.addEventListener("click", function() {
-    document.dispatchEvent(new CustomEvent("mozUITour",
-      {bubbles: true, detail: {action: "showMenu", data:{name: "appMenu"}}}));
+    document.dispatchEvent(new CustomEvent('mozUITour',
+      {bubbles:true, detail: {action:'showHighlight', data: { target: 'addons', effect: 'wobble' }}}));
   });
 
   customizeFirefox.addEventListener("click", function() {
     document.dispatchEvent(new CustomEvent("mozUITour",
-      {bubbles: true, detail: {action: "showMenu", data:{name: "appMenu"}}}));
+      {bubbles: true, detail: {action:'showHighlight', data: { target: 'customize', effect: 'wobble' }}}));
   });
 
   defaultBrowser.addEventListener("click", function() {
@@ -34,6 +34,6 @@
 
   privateBrowsing.addEventListener("click", function() {
     document.dispatchEvent(new CustomEvent("mozUITour",
-      {bubbles: true, detail: {action: "showMenu", data:{name: "appMenu"}}}));
+      {bubbles: true, detail: {action:'showHighlight', data: { target: 'privateWindow', effect: 'wobble' }}}));
   });
 }());
